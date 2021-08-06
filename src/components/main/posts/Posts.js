@@ -24,9 +24,8 @@ const Posts = ({ setShowSpinner }) => {
         setShowSpinner(true)
         if (isComponentExist) {
             getPosts(limit, currentPage, filtersData).then((res) => {
-                setCurrentPage(currentPage + 1)
+                setCurrentPage(currentPage + 1);
                 setShowSpinner(false);
-                console.log(res)
                 dispatchPostsData(setPostsAction(res.posts));
             })
         }
@@ -52,14 +51,11 @@ const Posts = ({ setShowSpinner }) => {
     useEffect(() => {
         setShowSpinner(true)
         getPosts(limit, 1, filtersData, postsData.length).then((res) => {
-            console.log(1)
-            setCurrentPage(res.posts.length / 5 + 1)
+            setCurrentPage(res.posts.length / 5 + 1);
             setShowSpinner(false)
             setHasMore(res.hasMore)
             dispatchPostsData(setPostsAction(res.posts));
         }).catch(e => console.log(e))
-
-        // dispatchPostsData(setPostsAction([]));
 
     }, [filtersData.sort, filtersData.fromPrice, filtersData.withImage]);
 
