@@ -1,0 +1,161 @@
+@media (max-width:1000px) {
+    .step4{
+        .mainFiles{
+            .mainImageInput{
+                margin-right: .5rem;
+            }
+
+        }
+    }
+}
+.step4{
+    width: 90%;
+    margin: 2rem auto;
+
+    h4{
+        color: #000;
+        font-size: 1em;
+        font-weight: inherit;
+        margin-bottom: 20px;
+        margin-top: 0;
+        line-height: 22px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .mainFilesCon{
+        border-bottom: 1px solid #ccc;
+    }
+    .mainFiles{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 70%;
+        padding-bottom: 2rem;
+
+        .mainImageInput{
+            width: 234px;
+            height: 200px;
+            border-radius: 4px;
+            background-color: #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            &>div:first-of-type{
+                margin-top: .2rem;
+            }
+            &>div:last-of-type{
+                border: none;
+                height: 80%;
+                width: 90%;
+
+                .fas{
+                    margin-top: 50px;
+                }
+
+                input{
+                    margin-top: -100px;
+                    height: 160px;
+                    width: 100%;
+                    position: relative;
+                    opacity: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .videoInput{
+        width: 234px;
+        height: 200px;
+        border: 2px dashed rgb(136, 136, 136);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+
+        svg{
+            width: 50px;
+            fill: #ccc;
+            height: 30px;
+            margin-top: 70px;
+        }
+
+        &>input{
+            margin-top: -120px;
+            height: 200px;
+            width: 100%;
+            position: relative;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .fileDisplayed{
+            width: 95%;
+            height: 95%;
+            margin: auto;
+        }
+    }
+    .imageInput{
+        background-color: white;
+        border-radius: 5px;
+        border: 2px dashed rgb(136, 136, 136);
+        width: 200px;
+        height: 180px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+
+        .fas{
+                margin-top: 70px;
+            font-size: 1.6rem;
+        }
+          .fileDisplayed{
+            width: 95%;
+            height: 95%;
+            margin: auto;
+        }
+    }
+    
+    .images{
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+
+        &>div{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-evenly;
+
+            &>div{
+                margin-left: .5rem;
+                margin-bottom: 1rem;
+            }
+        }
+
+        h1{
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .imageInput{
+            width: 30%;
+
+            input{
+                margin-top: -120px;
+                height: 200px;
+                width: 100%;
+                position: relative;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+    }
+}

@@ -1,0 +1,588 @@
+  .infinite-scroll-component__outerdiv{
+    width: 100% !important;
+  }
+  .infinite-scroll-component {
+    overflow: hidden !important;
+  }
+  .endMessage{
+    text-align: center;
+    margin: 1.5rem auto;
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: rgb(143, 143, 143);
+  }
+.post{
+    width: 100%;
+}
+.itemsInMerged{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+.itemsMerged{
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+
+    &>div{
+        margin: 1rem auto;
+    }
+}
+.priceAndDateExpanded{
+    width: 25% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    .clickForDetails{
+        display: none !important;
+    }
+    .date{
+        opacity: 1 !important;
+    }
+    .contactPhone{
+        background-color: rgb(65, 179, 65);
+        padding: 1rem;
+        margin-top: .5rem;
+        display: block !important;
+
+        span{
+            color: white !important;
+        }
+    }
+}
+.itemDetailsExpanded,.areaDetailsExpanded{
+    border: none !important;
+    align-self: center !important;
+    width: 100% !important;
+    height: 50% !important;
+}
+.itemDetailsExpanded{
+    width: 75% !important;
+    padding-top: 1rem !important;
+    margin-right: -1rem !important;
+}
+
+.post-desktopExpanded{
+    justify-content: space-between !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+
+    .minInfo{
+        padding-right: .5rem;
+    }
+     .numbersOfphotos{
+        display: flex !important;
+    }
+    .imageExpanded{
+    height: 7rem  !important;
+    width: 15rem  !important;
+    padding-left: 2rem ;
+}
+
+    
+}
+.postExpand{
+    border-top: 1px solid #ccc;
+    position: relative;
+    top: 0%;
+    width: 100%;
+    min-height: 10rem;
+    background-color: white;
+    display: flex;
+    z-index: 2;
+    
+    .advertise{
+        width: 25%;
+        background-color: #eee;
+    }
+    .propertyData{
+        width: 75%;
+        padding: .5rem;
+    }
+    
+    .propertyDescription{
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        h4{
+            font-weight: 500;
+            margin: 5px 0;
+            font-size: .875rem;
+            line-height: 1.0625rem;
+        }
+
+        .propertyDescText{
+            line-height: 1.5em;
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+
+        .propertiesSmall{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: .4rem;
+
+            div{
+                width: 50%;
+                font-size: .75rem;
+                line-height: 1.25rem;
+                color: #363636;
+                display: flex;
+                align-items: center;
+                padding: 5px 0 0 5px;
+                &>span:last-of-type{
+                    font-weight: 500;
+                }
+
+                .space{
+                    width: 5px;
+                }
+            }
+        }
+
+        
+    }
+    .propertyIcons{
+            h4{
+                margin-bottom: .2rem;
+            }
+            .icons{
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                align-items: center;
+
+                .iconExist,.iconNotExist{
+                    width: 21%;
+                    margin: .5rem;
+                    display: flex;
+                    align-items: center;
+
+                    &>span{
+                        margin-right: .5rem;
+                    }
+                }
+                .iconNotExist{
+                    opacity: .4;
+                }
+            }
+        }
+}
+@media (min-width:1000px) {
+    .posts{
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .minInfo{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        align-items: center;
+    }
+    .post-phone{
+        display: none;
+    }
+    .post-desktop:hover{
+        .priceAndDate{
+            .date{
+                opacity: 0;
+                transition: opacity .3s linear;
+            }
+            .clickForDetails{
+                opacity: 1;
+                color: red;
+                transition: opacity .8s linear;
+                text-align: center !important;
+                padding: 0 !important;
+                position: absolute;
+                top: 1.25rem;
+            }
+        }
+        .image{
+            .postFilesDisplay{
+                
+                .numbersOfphotos{
+                    display: flex ;
+                }
+            }
+        }
+
+    }
+    .post-desktop{
+        font-size: .9rem;
+        padding: 0.35rem;
+        // border-radius: 4px;
+        border: 1px solid #ccc;
+        width: 90%;
+        margin: 0.2rem auto;
+        min-height: 5.5rem;
+        background-color: #FDF9C5;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+
+        &:hover{
+            box-shadow:1px 1px 6px 2px rgba(0,0,0,.15) ;
+            cursor: pointer;
+        }
+        
+        .areaDetails{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            // border-bottom: 0.2px solid #ccc;
+            line-height: 1.4;
+            border-left: 1px solid #ccc;
+            margin-right: 0.5rem;
+            width: 40%;
+            height: 100%;
+            
+            .postStreet{
+               font-size: 1rem;   
+            //    font-weight: 300;             
+            }
+            .postAreaAndType{
+                margin-top: .1rem;
+                font-size: .875rem;
+                line-height: 1.0625rem;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+        .itemDetails{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-left: 1px solid #ccc;
+            height: 100%;
+            width: 45%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            
+            &>div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &span:last-of-type{
+                    font-weight: 300;
+                }
+            }
+        }
+        .image{
+            grid-area: img;
+            margin-left: 0rem;
+            width: 12rem;
+            height: 5rem;
+            margin: .2rem;
+            position: relative;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                border-radius: 4px;
+            }
+            .postFilesDisplay{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                z-index: 1;
+                width: auto;
+                border-radius: 16px;
+                background-color: rgba(0,0,0,.6);
+                top: calc(50% - 15px);
+
+                .fa-play{
+                    padding: 0 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .numbersOfphotos{
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 8px;
+
+                    .fa-clone{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.2rem;
+                        span{
+                            position: absolute;
+                            padding: .2rem;
+                            font-size: .6rem;
+                            left: 20%;
+                            top: 5%;
+                        }
+                    }
+                }
+            }
+        }
+        .priceAndDate{
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+
+            .priceNotMentioned{
+                font-size: 1rem;
+            }
+
+            .contactPhone{
+                display: none;
+            }
+            span:last-of-type{
+                font-weight: 300;
+                font-size: 13px;
+                color: rgba(0,0,0,.8);
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                text-align: left;
+                // width: 100%;
+                // padding-left: 2.5rem;
+            }
+            .date{
+                opacity: 1;
+                transition: opacity .3s linear;
+            }
+            .clickForDetails{
+                opacity: 0;
+                transition: opacity .3s linear;
+            }
+  
+        }
+        
+    }
+}
+@media (max-width:1000px){
+
+    .postExpand{
+        border-top: 1px solid #ccc;
+        position: relative;
+        top: 5%;
+        width: 154%;
+        margin-left: -.5rem;
+        @media (max-width:530px ){
+            margin-left: -.3rem;
+        }
+        min-height: 10rem;
+        background-color: white;
+        display: flex;
+    
+        .itemDetails{
+            padding-top: 0.5rem;
+        }
+
+        .propertyDescription{
+            padding: 0.5rem;
+            padding-bottom: 0;
+            display: inherit;
+        }
+        .propertyIcons{
+            background-color: white;
+            border-top: 1px solid #ccc;
+            padding-bottom: .5rem;
+
+            h4{
+                margin-bottom: 0;
+            }
+        }
+        .advertise{
+            display: none;
+        }
+        .propertyData{
+            width: 100%;
+            padding: 0 ;
+        }
+    }
+    .posts{
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+      .post-desktop{
+        display: none;
+    }
+
+     .image{
+            margin-left: 0rem;
+            margin: .2rem;
+            position: relative;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        .postFilesDisplay{
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                z-index: 1;
+                width: auto;
+                border-radius: 16px;
+                background-color: rgba(0,0,0,.6);
+                top: calc(50% - 15px);
+
+                .fa-play{
+                    padding: 0 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            .numbersOfphotos{
+                display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 8px;
+
+                    .fa-clone{
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 1.2rem;
+                        span{
+                            position: absolute;
+                            padding: .2rem;
+                            font-size: .6rem;
+                            left: 20%;
+                            top: 5%;
+                        }
+                    }
+            }
+        }
+    }
+
+
+    .post-phone{
+        font-size: .9rem;
+        direction: ltr;
+        padding: 0.35rem;
+        border-radius: 4px;
+        width: 100%;
+        margin: 0.2rem auto;
+        background-color: #FDF9C5;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 2.5fr 1fr;
+        grid-template-areas: 
+        "areaDetails img"
+        "itemDetails img";
+        
+        .areaDetails{
+            grid-area: areaDetails;
+            border-bottom: 0.2px solid #ccc;
+            line-height: 1.4;
+            
+            .priceAndDate{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span:last-child{
+                    font-size: .8rem;
+                    font-weight: 300;
+                }
+                span:first-child{
+                    font-size: 1.05rem;
+                    font-weight: 500;
+                }
+                .clickForDetails{
+                    display: none !important;
+                }
+                .date{
+                    opacity: 1 !important;
+                }
+                          .contactPhone{
+                background-color: rgb(65, 179, 65);
+                padding: .5rem;
+                margin-top: .5rem;
+                width: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                span{
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: .9rem;
+                    color: white !important;
+                }
+            }
+            }
+        }
+        .itemDetails{
+            grid-area: itemDetails;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            &>div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .image{
+            grid-area: img;
+            margin-left: 0.5rem;
+            img{
+                height: 100%;
+                width: 100%;
+                margin: auto;
+                border-radius: 8px;
+            }
+        }
+    }
+}
+
+.priceNotMentioned{
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+
+.post-desktop,.post-phone{
+    .priceAndDate{
+    
+        .clickForDetails{
+            position: absolute;
+            top: 1.25rem;
+        }
+    }
+}

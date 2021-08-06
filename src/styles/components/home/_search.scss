@@ -1,0 +1,766 @@
+
+.bold{
+    font-weight: 500;
+}
+@media (max-width:1000px) {
+    .search-desktop{
+        display:none
+    }
+    .search{
+        display: none;
+    }
+    .citiesDD,.StreetsDD{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 0;
+        padding-top: .2rem;
+        padding-right: 1rem;
+        width: 100%;
+        max-height: 15rem;
+        overflow: auto;
+        border: 1px solid rgb(109, 108, 108);
+        border-top: none;
+        border-radius: 4px;
+
+        &>div{
+            padding-top: .2rem;
+            padding-bottom: .2rem;
+        }
+    }
+    .citiesDD{
+        top: 22rem;
+    }
+    .StreetsDD{
+        top: 27rem;
+    }
+}
+@media (min-width:1000px) {
+    .search-phone{
+        display:none;
+    }
+     .search-desktop{
+        background-color: white;
+        padding: 1rem;
+        border-radius: 4px;
+        margin-bottom: 0.5rem;
+    }
+    
+    .searchHeadline{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 1.5rem;
+    }
+    .resultsDD{
+        border: red;
+    }
+    
+    .searchHeadlineText{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        width: 60%;
+        font-size: 1.1rem;
+    
+        .headerWord{
+            margin: auto 0.2rem;
+            color: $main-color-orange;
+            font-size: 1.125rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0;
+            border-bottom: 2px dotted #ff7100;
+        }
+    }
+    .notificationsButton{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid $main-color-orange;
+        font-size: 0.8rem;
+        color: $main-color-orange;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    
+        &:hover{
+            cursor: pointer;
+            background-color:$main-color-orange;
+            color: white;
+    
+        }
+    
+        img{
+            margin-left: 0.2rem;
+        }
+    }
+    
+    .searchForm{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 2fr 1fr 1.5fr 1.7fr;
+        grid-template-areas:
+        ". . price rooms type area";
+        font-size: 0.8rem;
+        direction: ltr;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .dropdown{
+        position: absolute;
+        top: 20.9rem;
+        min-width: 100px;
+        background-color: white;
+        padding: 15px;
+        box-shadow: 1px 1px 12px 1px rgba(1 ,1 ,1,0.1);
+        min-height: 80px;
+        z-index: 99999;
+    }
+
+    .citiesDD,.StreetsDD{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 21.8rem !important;
+        justify-content: flex-start;
+        padding: 0;
+        width: 30%;
+        max-height: 15rem;
+        overflow: auto;
+        border: 1px solid rgb(109, 108, 108);
+        border-top: none;
+        border-radius: 4px;
+
+        &>div{
+            display: flex;
+            justify-content: space-between;
+            white-space: nowrap;
+            &:hover{
+                background-color: darken(#eee,5%);
+            }
+        }
+        .searchResult{
+            width: 100%;
+            cursor: pointer;
+            padding-bottom: 1rem;
+            padding: .5rem 10px;
+            font-size: .95rem;
+            display: unset;
+        }
+        .searchResultLabel{
+            cursor: auto;
+            background-color: #eee;
+            font-weight: 500;
+            &:hover{
+                background-color:#eee;
+            }
+        }
+        .searchResultHeader{
+            color: #989898;   
+            font-size: 14px;
+            line-height: 30px;
+            padding: 0 10px;
+
+        }
+    }
+
+    .StreetsDD{
+        top: 26.5rem !important;
+    }
+
+    .ddRooms{
+        display: flex;
+        div{
+            width: 100%;
+            font-size: 14px;
+            color: #363636; 
+            select{
+                height: 100%;
+                border: 1px solid #ccc;
+                padding-left: 1rem;
+            }
+        }
+    }
+
+    .ddTypes{
+        display: flex;
+        flex-direction: column;
+        width: 15rem;
+
+        .headerSelect{
+            span{
+                padding-right: 4px;
+                font-size: .875rem;
+                line-height: 1.0625rem;
+                color: #999;
+            }
+        }
+        
+        &>div:not(:last-of-type){
+            width: 100%;
+            font-size: 1.05rem;
+            color: #363636; 
+            margin-bottom: 1rem;
+            background-color: #F9F9F9;
+            padding: .5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            cursor: pointer;
+
+            select{
+                height: 100%;
+                border: 1px solid #ccc;
+                padding-left: 1rem;
+            } 
+           
+            .checkBoxDDarray{
+                width: 100%;
+                margin-top: .5rem;
+                padding-top: .5rem;
+                padding-bottom: 1rem;
+                background-color: white;
+                position: relative;
+                div{
+                    padding: .5rem;
+                    border-bottom: 1px solid #eee;
+
+                    &:last-of-type{
+                        border-bottom: none;
+                    }
+                }
+            }
+            
+        }
+         .headerSelect,.all{
+                width: 100%;
+                display: flex;
+                flex-direction: row !important;
+                align-items: center;
+            justify-content: space-between;
+            }
+        &>div:last-of-type{
+                text-align: left;
+                color: $main-color-orange;
+                cursor: pointer;
+            }
+
+    }
+
+    .area{
+        grid-area: area;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+        span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            margin-bottom: 0.3rem;
+        }
+        input{
+            border:1px solid #ccc ;
+            padding: 0.8rem;
+            padding-left: 1.5rem;
+            display: block;
+            outline: none;
+        }
+    }
+    
+    .type{
+        grid-area: type;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+          &>span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            // margin-bottom: 0.3rem;
+        }
+    
+          button{
+            min-width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 43px;
+            // padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: .875rem;
+            line-height: 1.0625rem;
+            color: #999;
+            background-color: #fff;
+            margin-top: 5px;
+            padding: 0 10px 0 5px;
+            cursor: pointer;
+    
+            span{
+                width: fit-content;
+                display: inline-block;
+                text-align: right;
+                font-size: .875rem;
+            }
+            img{
+                width: 20px;
+            }
+        }
+    }
+    .rooms{
+        grid-area: rooms;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+          &>span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            // margin-bottom: 0.3rem;
+        }
+        .roomsSelected{
+            color: black;
+        }
+    
+          button{
+            min-width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+            height: 43px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: .875rem;
+            line-height: 1.0625rem;
+            color: #999;
+            background-color: #fff;
+            margin-top: 5px;
+            padding: 0 10px 0 5px;
+    
+            span{
+                width: fit-content;
+                display: inline-block;
+                text-align: right;
+                font-size: .875rem;
+            }
+            img{
+                width: 20px;
+            }
+        }
+    }
+    
+    .price{
+        grid-area: price;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    
+          span{
+            min-width: 96%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            margin-bottom: 0.3rem;
+        }
+    
+        .pricesBoxes{
+            display: flex;
+            min-width: 200px;
+            input{
+            width: 50%;
+            border:1px solid #ccc ;
+            padding: 0.8rem;
+            display: block;
+            outline: none;
+            margin: auto;
+            }
+        }
+    }
+    
+    .searchButton{
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        padding: .8em 1em;
+         padding-bottom: 0;
+        position: relative;
+        border-radius: 2px;
+        direction: rtl;
+        color: #363636;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin-bottom: -.7rem;
+        z-index: 2;
+    
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 1rem;
+            font-weight: 500;
+            background-color: $main-color-orange;
+            border: none;
+            color: white;
+    
+            &:hover{
+                cursor: pointer;
+                background-color: darken($color: $main-color-orange, $amount: 5%);
+            }
+        }
+    
+        svg{
+            margin-left: 0.2rem;
+        }
+    }
+    
+    
+    
+    .advancedSearchButton{
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        padding: .8em 1em;
+        padding-bottom: 0;
+        position: relative;
+        border-radius: 2px;
+        direction: rtl;
+        color: #363636;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        min-width: 9rem;
+        margin-bottom: -.7rem;
+
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 5px;
+            font-weight: 500;
+            border:none;
+    
+            &:hover{
+                cursor: pointer;
+                background-color: darken($color: $main-color-grey, $amount: 15%);
+            }
+        }
+    }
+    
+    .none{
+        display: none;
+    }
+
+
+@media (max-width:1000px) {
+    .search-desktop{
+        display:none
+    }
+    .search{
+        display: none;
+    }
+}
+@media (min-width:1000px) {
+    .search-phone{
+        display:none;
+    }
+    
+    .searchHeadline{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .searchHeadlineText{
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        width: 60%;
+        font-size: 1.1rem;
+    
+        .headerWord{
+            margin: auto 0.2rem;
+            color: $main-color-orange;
+            font-size: 1.125rem;
+            font-weight: 500;
+            position: relative;
+            padding: 0;
+            border-bottom: 2px dotted #ff7100;
+        }
+    }
+    .notificationsButton{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        border: 1px solid $main-color-orange;
+        font-size: 0.8rem;
+        color: $main-color-orange;
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    
+        &:hover{
+            cursor: pointer;
+            background-color:$main-color-orange;
+            color: white;
+    
+        }
+    
+        img{
+            margin-left: 0.2rem;
+        }
+    }
+    
+    .searchForm{
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 2fr 1fr 1.5fr 1.7fr;
+        grid-template-areas:
+        ". . price rooms type area";
+        font-size: 0.8rem;
+        direction: ltr;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .area{
+        grid-area: area;
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+        span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            margin-bottom: 0.3rem;
+        }
+        input{
+            border:1px solid #ccc ;
+            padding: 0.8rem;
+            padding-left: 1.5rem;
+            display: block;
+            outline: none;
+        }
+    }
+    
+    .type{
+        grid-area: type;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+          &>span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            // margin-bottom: 0.3rem;
+        }
+    
+          button{
+            min-width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 43px;
+            // padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: .875rem;
+            line-height: 1.0625rem;
+            color: #999;
+            background-color: #fff;
+            margin-top: 5px;
+            padding: 0 10px 0 5px;
+    
+            span{
+                width: fit-content;
+                display: inline-block;
+                text-align: right;
+                font-size: .875rem;
+            }
+            img{
+                width: 20px;
+            }
+        }
+    }
+    .rooms{
+        grid-area: rooms;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: 0.5rem;
+    
+          &>span{
+            min-width: 100%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            // margin-bottom: 0.3rem;
+        }
+    
+          button{
+            min-width: 100px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 43px;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            font-size: .875rem;
+            line-height: 1.0625rem;
+            color: #999;
+            background-color: #fff;
+            margin-top: 5px;
+            padding: 0 10px 0 5px;
+    
+            span{
+                width: fit-content;
+                display: inline-block;
+                text-align: right;
+                font-size: .875rem;
+            }
+            img{
+                width: 20px;
+            }
+        }
+    }
+    
+    .price{
+        grid-area: price;
+        flex-direction: column;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+    
+          span{
+            min-width: 96%;
+            display: inline-block;
+            color: #363636;
+            text-align: right;
+            font-size: .875rem;
+            margin-bottom: 0.3rem;
+        }
+    
+        .pricesBoxes{
+            display: flex;
+            min-width: 200px;
+            input{
+            width: 48%;
+            border:1px solid #ccc ;
+            padding: 0.8rem;
+            display: block;
+            outline: none;
+            margin: auto;
+            }
+        }
+    }
+    
+    .searchButton{
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        padding: .8em 1em;
+        position: relative;
+        border-radius: 2px;
+        direction: rtl;
+        color: #363636;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        z-index: 2;
+        
+    
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 5px;
+            font-weight: 500;
+            background-color: $main-color-orange;
+            border: none;
+            color: white;
+    
+            &:hover{
+                cursor: pointer;
+                background-color: darken($color: $main-color-orange, $amount: 5%);
+            }
+        }
+    
+        svg{
+            margin-left: 0.2rem;
+        }
+    }
+    
+    
+    
+    .advancedSearchButton{
+        font-size: .875rem;
+        line-height: 1.0625rem;
+        padding: .8em 1em;
+        position: relative;
+        border-radius: 2px;
+        direction: rtl;
+        color: #363636;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 5px;
+            font-weight: 500;
+            border:none;
+    
+            &:hover{
+                cursor: pointer;
+                background-color: darken($color: $main-color-grey, $amount: 15%);
+            }
+        }
+    }
+    
+    .none{
+        display: none;
+    }
+}
+}

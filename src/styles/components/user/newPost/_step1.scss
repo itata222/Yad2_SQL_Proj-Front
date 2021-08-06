@@ -1,0 +1,140 @@
+
+
+.step1{
+    width: 90%;
+    margin: 2rem auto;
+
+    h4{
+        color: #000;
+        font-size: 1.1em;
+        font-weight: inherit;
+        margin-bottom: 20px;
+        margin-top: 0;
+        line-height: 22px;
+    }
+
+    .step1Form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        
+        .street,.city{
+            max-height: 15rem;
+            overflow: auto;
+        }
+
+        .lowerOpacity{
+            opacity: .5;
+        }
+
+        label{
+            font-size: .85rem;
+            margin-bottom: .3rem;
+        }
+
+        select,input,.neightValue,.areaValue{
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            text-indent: 8px;
+
+            &[disabled]{
+                cursor: not-allowed;
+
+            }
+        }
+        select{
+            cursor: pointer;
+        }
+
+        &>div{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 1rem ;    
+                    width: 33%;
+        }
+        .numHouse{
+            width: 20%;
+        }
+
+        .floorInfo{
+            &>div:nth-of-type(1){
+                min-width: 10rem;
+            }
+        }
+        .floorInfo,.noti{
+            flex-direction: row;
+            width: 57%;
+
+            &>div:nth-of-type(1),&>div:nth-of-type(2){
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                margin-left: 1rem;
+            }
+            &>:nth-of-type(3){
+                align-self: flex-end;
+                display: flex;
+                align-items: center;
+                min-width: 6rem;
+                label{
+                    width: 100%;
+                }
+                input{
+                    margin-left: .5rem;
+                    max-width: 1rem;
+                }
+            }
+        }
+        .noti{
+            align-items: center;
+            width: 100%;
+            justify-content: flex-start;
+              input{
+                    margin-left: .5rem;
+                    max-width: 1rem;
+                }
+        }
+    }
+}
+
+@media (max-width:1000px) {
+    .stepBox .activeText, .stepBox .disactiveText{
+        padding-right: 8.5% !important;
+    }
+    .step1 .step1Form > div{
+        margin-right: inherit;
+        width: 60% !important;
+    }
+    .floorInfo{
+        min-width: min-content;
+        @media (max-width:450px) {
+            min-width: 100%;
+            &>div{
+                min-width: 6.5rem !important;
+            }
+        }
+        &>div{
+            min-width: 10rem;
+        }
+    }
+}
+
+.invalidInput,.invalidSelect{
+    border: 1px solid red !important;
+}
+.invalidMessage{
+    color: red;
+    font-size: .9rem;
+    margin-top: .1rem;
+}
+.block{
+    display: block;
+}

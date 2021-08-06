@@ -1,0 +1,71 @@
+@media (max-width:1000px) {
+    .step3{
+        .step3-form{
+            &>div{
+                width: 60% !important;
+                min-width: 10rem;
+            }
+            .price{
+                margin-right: inherit;
+                margin-top: 0;
+            }
+        }
+    }
+}
+.step3{
+    width: 90%;
+    margin: 2rem auto;
+
+    .step3-form{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        label{
+            font-size: .85rem;
+            margin-bottom: .3rem;
+        }
+
+      
+
+        select,input{
+            width: 100%;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+            font-size: 14px;
+            text-indent: 8px;
+
+        }
+        select{
+            cursor: pointer;
+        }
+        &>div{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: 1rem ;    
+            width: 33%;
+
+            &:last-of-type{
+                margin-bottom: 1rem;
+            }
+        }
+        .city{
+            &>div{
+                display: flex;
+                align-items: center;
+                 &>input:first-of-type{
+                    margin-left: .5rem;
+                    cursor: pointer;
+                }
+                // &>input:last-of-type{
+                //     width: 1rem;
+                // }
+            }
+        }
+    }
+}

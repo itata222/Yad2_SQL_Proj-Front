@@ -1,0 +1,63 @@
+.modalWithMessage {
+    height: 100vh !important;
+    width: 100vw !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: rgba(100, 100, 100, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalWithMessage-content {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid $main-color-orange;
+    border-radius: 5px;
+    background: white;
+    padding: 1rem;
+    margin: auto;
+    text-align: center;
+  
+    textarea {
+      width: 100%;
+      resize: none;
+      padding: 0.5rem;
+    }
+
+    h4{
+      text-align: center;
+      font-size: 1.25rem;
+    }
+  
+    button {
+      border: none;
+      color: white;
+      margin: 1rem;
+      border-radius: 5px;
+      background: $main-color-orange;
+      padding: 0.5rem;
+  
+      &:hover {
+        background: $main-color-orange;
+        cursor: pointer;
+      }
+    }
+  }
+  
+
+  @media (min-width: 768px){
+    .modalWithMessage-content{
+      h4{
+        text-align: center;
+        font-size: 1.45rem;
+      }
+
+      button {
+        padding: 0.8rem;
+        font-size: larger;
+      }  
+    }
+  }

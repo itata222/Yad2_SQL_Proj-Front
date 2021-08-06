@@ -1,0 +1,312 @@
+@keyframes openSideBarBack {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes openSideBarContent {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+       transform: translateX(0);
+    }
+}
+@media (min-width:1000px) {
+    .navBar{
+        position: none;
+    }
+}
+@media (max-width:1000px) {
+    .navBar{
+        z-index: 999;
+        position: fixed;
+        height: 100%;
+    }
+    .navBarBackground{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background: rgba(0,0,0,.54);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: openSideBarBack 1s cubic-bezier(.25,.8,.25,1);
+        opacity: 1;
+    }
+
+    .navBarContent{
+        box-shadow: 0 8px 10px -5px rgba(0, 0, 0, .2), 0 16px 24px 2px rgba(0 ,0 ,0, .14), 0 6px 30px 5px rgba(0, 0 ,0 ,.12);
+        pointer-events: auto;
+        transform: translateZ(0);
+        position: fixed;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 110;
+        overflow: auto;
+        animation: openSideBarContent .4s cubic-bezier(.25,.8,.25,1);
+        background-color: #fff;
+        min-width: 310px;
+        max-width: 400px;
+        width: 85%;
+
+    }
+    .logoutPhone{
+        position: relative;
+        top: 1rem;
+        left: 1rem;
+        color: rgb(143, 143, 143);
+    }
+    .exitButton{
+        z-index: 13;
+        right: 10px;
+    }
+    .logoutPhone{
+        left: 10px;
+        top: 10px;
+        position: absolute;
+        z-index: 1001;
+        cursor: pointer;
+        // width: 20px;
+        // height: 18px;
+        top: 10px;
+        color: #aaa;
+        float: left;
+        font-size:.9rem;
+        // font-weight: 700;
+    }
+
+    .sideBarHeader{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        margin: 2rem auto;
+        background-color: white;
+
+        .notConnected{
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            // margin-bottom: 1rem;
+        }
+        .profileSection{
+            display: grid;
+            direction: ltr;
+            grid-template-columns: 1fr .7fr;
+            grid-template-rows: 1fr 1fr;
+            column-gap: .5rem;
+            grid-template-areas: 
+            "userName img"
+            "sentance img";
+
+            .profile-icon{
+                background-color: $main-color-grey;
+                border-radius: 50%;
+                height: 100%;
+                padding: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .circleName{
+                border-radius: 50%;
+                padding: 15px 0;
+                font-size: 18px;
+                font-weight: 500;
+                color: #ff7100;
+                background-color: #fff1e5;
+                grid-area: img;
+
+                span{
+                    display: block;
+                    text-align: center;
+                }
+            }
+            &>span{
+                grid-area:userName;
+                font-weight: 500;
+                align-self: flex-end;
+            }
+           .profileLink{
+                grid-area:sentance;
+                text-decoration: underline;
+                font-size: .9rem;
+                color: black;
+            }
+        }
+
+        .newPostSection{
+
+            button{
+                width: 170px;
+                border-radius: 17px;
+                background-color: #0fca80;
+                display: block;
+                margin: 25px auto;
+                font-size: 1rem;
+                line-height: 1.1875rem;
+                font-weight: 500;
+                line-height: 35px;
+                color: #fff;
+                outline: none;
+                border: none;
+            }
+        }
+
+        .icons{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: .5rem auto;
+            margin-bottom: 0;
+
+            div{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 5rem;
+                text-align: center;
+                span{
+                    margin-top: .2rem;
+                    font-size: .875rem;
+                    line-height: 1.0625rem;
+                    width: 50px;
+                    color: #999;
+                }
+            }
+        }
+    }
+
+    .sideBarFastSearch{
+        background-color: #eee;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+         padding-right:34px;
+
+        h3{
+            color: #999;
+            display: block;
+            font-size: 1rem;
+            line-height: 1.1875rem;
+           font-weight: 400;
+        }
+        .fastSearchDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+
+            div{
+                display: flex;
+                align-items: center;
+                padding: 9px 15px;
+                padding-right: 0;
+                margin: 0 18px;
+                margin-right: 0;
+                border-radius: 20px;
+                color: #363636;
+                font-weight: 500;
+                font-size: 1.125rem;
+                line-height: 1.375rem;
+                text-align: right;
+                width: 20rem;
+                
+                img{
+                    padding-left: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .sideBarNavigateCategories{
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right:34px;
+        width: 100%;
+        h3{
+            color: #999;
+            display: block;
+            font-size: 1rem;
+            line-height: 1.1875rem;
+           font-weight: 400;
+        }
+        .categoriesSearchDiv{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+            width: 100%;
+
+            div{
+                display: flex;
+                // flex-direction: row-reverse;
+                align-items: center;
+                justify-content: space-between;
+                padding: 9px 15px;
+                padding-right: 0;
+                margin: 0 18px;
+                margin-right: 0;
+                border-radius: 20px;
+                color: #363636;
+                font-weight: 400;
+                font-size: 1.125rem;
+                line-height: 1.375rem;
+                text-align: right;
+                // width: 20rem;
+                width: 100%;
+                border-bottom: 1px solid #eee;
+                
+                img{
+                    padding-left: 1.5rem;
+                }
+            }
+        }
+    }
+
+    .sideBarFooter{
+       display: flex;
+        padding: 20px 40px;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        background-color: #f9f9f9;
+
+        &>div{
+            text-align: center;
+            min-width: 70px;
+            margin: 5px 0;
+
+            .circle{
+                font-size: 1.5rem;
+                line-height: 1.75rem;
+                font-weight: 400;
+                width: 30px;
+                height: 30px;
+                background-color: #eee;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 5px auto;
+            }
+            span{
+                display: block;
+                width: 45px;
+                text-align: center;
+                font-size: .75rem;
+                line-height: 1.25rem;
+                color: #999;
+                margin: 0 auto;
+                line-height: 17px;
+            }
+        }
+    }
+}

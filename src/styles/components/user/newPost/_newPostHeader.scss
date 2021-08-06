@@ -1,0 +1,98 @@
+@media (min-width:1000px) {
+    .newPostHeader{
+        background-color: white;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: .8rem;
+
+        .right{
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 70px;
+                cursor: pointer;
+            }
+            &>span{
+                color: #363636;
+                font-family: Rubik;
+                font-size: 18px;
+                text-align: right;
+                margin-right: 10px;
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .left{
+            display: flex;
+            align-items: center;
+            
+            .me{
+                color: $main-color-orange;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+            }
+            &>span{
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .exit{
+                box-sizing: border-box;
+                height: 31px;
+                line-height: 28px;
+                width: 81px;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                background-color: #fff;
+                text-align: center;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                color: #363636;
+                text-decoration: none;
+
+                img{
+                    width: 20px;
+                    height: 15px;
+                    vertical-align: middle;
+                    margin-right: 2px;
+                    color: #606060;
+                }
+            }
+        }
+    }
+    
+}
+@media (max-width:1000px) {
+    .newPostHeader{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem;
+        .left{
+            
+            .exit{
+                display: flex;
+            align-items: center;
+            span{
+                display: none;
+            }
+            }
+            .me,&>span{
+                display: none;
+            }
+        }
+    }
+
+    .newPostContainer{
+        margin-top: 20px !important;
+    }
+}

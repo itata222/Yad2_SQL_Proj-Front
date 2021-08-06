@@ -1,0 +1,189 @@
+@media (max-width:1000px) {
+  .subHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4.5rem;
+    // border-bottom: $main-border;
+    box-shadow: 0 5px 6px 0 rgba(0,0, 0, 0.1);
+    background-color: white;
+
+    background-color: #f9f9f9;
+    
+    .phone{
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       border: 1px solid #ccc;
+       background-color: white;
+       padding: 0.5rem;
+       width: 92%;
+       height: 65%;
+
+       .right-input{
+           display: flex;
+            height: 100%;
+            width: 80%;
+           img{
+               margin: 0.2rem;
+           }
+           input{
+               background-color: white;
+               border: none;
+               width: 8rem;
+               height: 100%;
+               outline: none;
+           }
+       }
+
+       .left-input{
+           height: 100%;
+            display: flex;
+            align-items: center;
+
+            div{
+                color: #ff7100;
+                font-size: .875rem;
+                line-height: 1.0625rem;
+                margin-right: auto;
+                background-color: #fff;
+                width: 60px;
+                text-align: center;
+                box-shadow: 12px 0 20px 10px #fff;
+                height: 20px;
+            }
+       }
+    }
+    .right{
+        display: none;
+    }
+    .left{
+        display: none;
+    }
+}  
+}
+
+
+@media (min-width:1001px) {
+    .phone{
+        display: none;
+    }
+    .subHeader{
+        display: flex;
+        flex-direction: row ;
+        justify-content: space-between;
+        align-items: center;
+        height: 3.5rem;
+        // border-bottom: $main-border;
+        background-color: white;
+        box-shadow: 0 5px 6px 0 rgba(0,0, 0, 0.1);
+    
+    .right{
+        display: flex;
+        height: 100%;
+        margin-right: 140px;
+
+        div{
+            height: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            display: flex;
+            align-items: center;
+
+            &:first-of-type{
+                color: $main-color-orange;
+                font-weight: 500;
+                border-bottom: 3px solid $main-color-orange;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $main-color-grey;
+            }
+        }
+    }
+    .left{
+        display: flex;
+        height: 100%;
+        max-width: 50vw;
+        margin-left: 2rem;
+
+        div{
+            height: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            align-items: center;
+
+            .img{
+                height: 30%;
+                margin-left: 0.5rem;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $main-color-grey;
+            }
+        }
+    }
+}
+}
+@media (min-width:1200px) {
+    .subHeader{
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
+    align-items: center;
+    height: 3.5rem;
+    // border-bottom: $main-border;
+    box-shadow: 0 5px 6px 0 rgba(0,0, 0, 0.1);
+    
+    .right{
+        display: flex;
+        height: 100%;
+        margin-right: 140px;
+
+        div{
+            height: 100%;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            display: flex;
+            align-items: center;
+
+            &:first-of-type{
+                color: $main-color-orange;
+                font-weight: 500;
+                border-bottom: 3px solid $main-color-orange;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $main-color-grey;
+            }
+        }
+    }
+    .left{
+        display: flex;
+        height: 100%;
+        margin-left: 2rem;
+
+        div{
+            height: 100%;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            align-items: center;
+
+            .img{
+                height: 30%;
+                margin-left: 0.5rem;
+            }
+
+            &:hover{
+                cursor: pointer;
+                background-color: $main-color-grey;
+            }
+        }
+    }
+}
+}

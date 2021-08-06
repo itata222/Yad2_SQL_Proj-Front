@@ -1,0 +1,60 @@
+.updateInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    h3{
+        font-size: 1.5rem;
+    }
+
+    .changePasswordForm{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        width: 80%;
+        margin: auto;
+
+        .password,.email{
+            margin: 1.5rem auto;
+            display: flex;
+            flex-direction: column;
+            width: 70%;
+
+            .passInputs{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 100%;
+            }
+            input{
+                margin: .2rem auto;
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+                font-size: 1rem;
+            }
+            
+            label {
+                font-size: 1.3rem;
+                margin-bottom: .5rem;
+            }
+        }
+        &>button{
+            padding: 1rem;
+            align-self: center;
+            font-size: 1.2rem;
+
+            &[disabled]{
+                cursor: not-allowed;
+            }
+            &:not([disabled]){
+                cursor: pointer;
+                background-color: $main-color-orange;
+                border: none;
+            }
+        }
+        
+    }
+}

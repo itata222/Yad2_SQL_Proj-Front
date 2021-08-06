@@ -1,0 +1,23 @@
+.location{
+    display: flex;
+
+    ul{
+        display: flex;
+        padding-right: 1rem;
+    }
+    li{
+        list-style-type: none;
+        margin: auto 0.3rem;
+        color: #ccc;
+
+        &:first-of-type{
+        color: black;
+
+        }
+    }
+}
+.locationHeadline{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+
