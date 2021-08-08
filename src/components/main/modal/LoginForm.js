@@ -7,14 +7,14 @@ import { loginToDB } from '../../../services/userService';
 import Spinner from '../Spinner';
 
 const LoginForm = (props) => {
-
     const { dispatchUserData } = useContext(LoginContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [isEmailinputValid, setIsEmailInputValid] = useState(true);
     const [isPasswordInputValid, setIsPasswordInputValid] = useState(true);
     const [showPassowrd, setShowPassowrd] = useState(false);
-    const [showSpinner, setShowSpinner] = useState(false)
+    const [showSpinner, setShowSpinner] = useState(false);
+    const [showErrorLoginMessage, setShowErrorLoginMessage] = useState(false);
 
     const history = useHistory();
 
@@ -25,23 +25,25 @@ const LoginForm = (props) => {
         event.preventDefault();
         setShowSpinner(true)
         loginToDB(email, password).then((response) => {
-            console.log(response.data.user)
-            setShowSpinner(false)
-            if (response.data) {
-                const userData = response.data;
-                if (props.setShowLoginModal)
-                    props.setShowLoginModal(false)
-                saveUserOnCookie(userData)
-                dispatchUserData(loginAction(userData));
-                history.push('/home')
-            }
-            else
-                alert('שגיאה')
+            setTimeout(() => {
+                setShowSpinner(false)
+                if (response.data) {
+                    const userData = response.data;
+                    if (props.setShowLoginModal)
+                        props.setShowLoginModal(false)
+                    saveUserOnCookie(userData)
+                    dispatchUserData(loginAction(userData));
+                    history.push('/home')
+                }
+
+                else {
+                    setShowErrorLoginMessage(true)
+                }
+            }, 500);
         }).catch((err) => {
             console.log(err)
         })
     };
-
     const onClickSubscribe = () => {
         props.setIsLoginMode(false);
     };
@@ -64,6 +66,7 @@ const LoginForm = (props) => {
     };
     return (
         <div className="login-form">
+            {(showErrorLoginMessage && !props.isMobileForm) && <div className="loginErrorMessage">שם משתמש או סיסמא לא נכונים</div>}
             {showSpinner && <Spinner />}
             <div className="form-header">
                 <h3>התחברות</h3>
@@ -89,6 +92,7 @@ const LoginForm = (props) => {
                             {!isPasswordInputValid && <div className="invalid-message">שדה חובה</div>}
                             <span className="forgotPassword">שכחתי סיסמה</span>
                         </div>
+                        {(showErrorLoginMessage && props.isMobileForm) && <div className="loginErrorMessageMobile">שם משתמש או סיסמא לא נכונים</div>}
                     </div>
                     <div className="div2">
                         <button type="submit" disabled={isFormInavlid()}>התחבר</button>

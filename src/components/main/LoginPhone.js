@@ -3,9 +3,10 @@ import { useHistory } from 'react-router-dom'
 import LoginForm from './modal/LoginForm';
 import RegisterForm from './modal/RegisterForm';
 
-const LoginPhone = () => {
+const LoginPhone = (props) => {
     const [isLoginMode, setIsLoginMode] = useState(true);
     const history = useHistory();
+    const isMobileLoginForm = props.location.pathname === "/login-page"
     return (
         <div className="loginPhone">
             <img onClick={() => history.push('/home')} className="exitButton" src="https://img.icons8.com/fluent-systems-filled/48/000000/x.png" alt="x" />
@@ -18,7 +19,7 @@ const LoginPhone = () => {
             </div>
             <div className="form-div">
                 {isLoginMode ?
-                    <LoginForm setIsLoginMode={setIsLoginMode} /> :
+                    <LoginForm setIsLoginMode={setIsLoginMode} isMobileForm={isMobileLoginForm} /> :
                     <RegisterForm setIsLoginMode={setIsLoginMode} />
                 }
             </div>

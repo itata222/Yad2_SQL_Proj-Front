@@ -1,3 +1,43 @@
+@keyframes visibleFromAbove {
+  0% {
+      opacity: 0;
+    transform: translateY(0);    
+  }
+  100% {
+      opacity: 1;
+    transform: translateY(100%);
+  }
+}
+.loginErrorMessage{
+    background-color: white;
+    margin: auto;
+    max-width: 600px;
+    min-width: 100px;
+    border-radius: 4px;
+    font-size: .9rem;
+    padding: 1rem;
+    color: red;
+    text-align: center;
+    position: absolute;
+    top: -7rem;
+    left: 50%;
+    animation: visibleFromAbove .5s ease-in forwards;
+}
+.loginErrorMessageMobile{
+    margin: auto;
+    max-width: 600px;
+    min-width: 100px;
+    border-radius: 4px;
+    font-size: .9rem;
+    padding: 1rem;
+    color: red;
+    text-align: center;
+    position: absolute;
+    bottom: 0rem;
+    left: 30%;
+    animation: visibleFromAbove .5s ease-in forwards;
+}
+
 @media (max-width:1000px) {
     .loginPhone{
         display: flex;
@@ -52,7 +92,6 @@
                 width: 80%;
                 height: 80%;
                 margin: auto;
-
             }
 
             .passwordDiv img {
@@ -64,6 +103,9 @@
                 display: flex;
                 flex-direction: column;
                 margin-top: 15rem;
+            }
+            .form-container form .div1 {
+                position: relative;
             }
 
           

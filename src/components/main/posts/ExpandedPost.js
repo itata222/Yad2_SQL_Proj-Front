@@ -48,7 +48,7 @@ const ExpandedPost = ({ post }) => {
                         <div className="propertyFloorsIn">
                             <span> קומות בבניין </span>
                             <span className="space"> </span>
-                            <span>{post.floorsIn}</span>
+                            <span>{post.floorsInBuilding}</span>
                         </div>
                         <div className="propertyBalconies">
                             <span> מרפסות </span>

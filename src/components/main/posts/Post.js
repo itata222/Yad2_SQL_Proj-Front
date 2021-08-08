@@ -68,7 +68,7 @@ const Post = ({ post }) => {
                 }}>
                     <div className="postFilesDisplay">
                         {post.video !== "" && <i className="fas fa-play"></i>}
-                        {post.photos.length > 1 &&
+                        {post.photos?.length > 1 &&
                             <div className="numbersOfphotos">
                                 <i className="far fa-clone">
                                     <span>+{post.photos.length - 1}</span>
@@ -76,7 +76,7 @@ const Post = ({ post }) => {
                             </div>
                         }
                     </div>
-                    <img src={post.photos[0].photo || 'https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png'} alt="" />
+                    <img src={!!post.photos && post.photos[0]?.photo || 'https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png'} alt="" />
                 </div>
                 {
                     showPost &&
@@ -91,7 +91,7 @@ const Post = ({ post }) => {
                     }}>
                         <div className="postFilesDisplay">
                             {post.video !== "" && <i className="fas fa-play"></i>}
-                            {post.photos.length > 1 &&
+                            {post.photos?.length > 1 &&
                                 <div className="numbersOfphotos">
                                     <i className="far fa-clone">
                                         <span>+{post.photos.length - 1}</span>
@@ -99,7 +99,7 @@ const Post = ({ post }) => {
                                 </div>
                             }
                         </div>
-                        <img src={post.photos[0].photo || 'https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png'} alt="" />
+                        <img src={!!post.photos && post.photos[0]?.photo || 'https://assets.yad2.co.il/yad2site/y2assets/images/pages/feed/feed_re_placeholder_small.png'} alt="" />
                     </div>
                     <div className={showPost ? 'itemsMerged' : 'itemsInMerged'}>
                         <div className={showPost ? 'areaDetails areaDetailsExpanded' : 'areaDetails'}>

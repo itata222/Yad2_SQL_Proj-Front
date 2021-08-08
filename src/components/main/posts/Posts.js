@@ -11,7 +11,7 @@ import { setPostsAction } from '../../../actions/postsActions';
 
 const Posts = ({ setShowSpinner }) => {
     const { filtersData } = useContext(FiltersContext);
-    console.log(filtersData)
+    // console.log(filtersData)
     const { postsData, dispatchPostsData } = useContext(PostsContext)
     const [currentPage, setCurrentPage] = useState(1);
     const [hasMore, setHasMore] = useState(true);

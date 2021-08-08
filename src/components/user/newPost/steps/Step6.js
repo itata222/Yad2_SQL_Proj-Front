@@ -16,7 +16,7 @@ const Step6 = () => {
         setShowSpinner(true)
         addPostToDB(userData.token, postData).then((res) => {
             setShowSpinner(false);
-            // setShowModal(true)
+            setShowModal(true)
         }).catch((e) => console.log(e))
     }
 
