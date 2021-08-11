@@ -28,12 +28,12 @@ const Post = ({ post }) => {
             <div className={showPost ? 'post-phone post-phoneExpanded' : 'post-phone'} onClick={openPost}>
                 <div className="areaDetails">
                     <div className="priceAndDate">
-                        {post.price === -1 ?
+                        {post.price === -1 || post.price === 0 ?
                             <div className="priceNotMentioned">לא צוין מחיר</div>
                             :
                             <NumberFormat value={post.price} displayType={'text'} thousandSeparator={true} prefix={'₪'} />
                         }
-                        <span className="date">{moment(post.updatedAt).isSame(new Date(), "day") ? 'עודכן היום' : ''}</span>
+                        <span className="date">{moment(post.creationDate).isSame(new Date(), "day") ? 'עודכן היום' : ''}</span>
                         <span className="clickForDetails">לחצו לפרטים</span>
                         <div className="contactPhone">
                             <span>{post.contactPhone}</span>
@@ -128,12 +128,12 @@ const Post = ({ post }) => {
                         </div>
                     </div>
                     <div className={showPost ? 'priceAndDate priceAndDateExpanded' : 'priceAndDate'}>
-                        {post.price === -1 ?
+                        {post.price === -1 || post.price === 0 ?
                             <div className="priceNotMentioned">לא צוין מחיר</div>
                             :
                             <NumberFormat value={post.price} displayType={'text'} thousandSeparator={true} prefix={'₪'} />
                         }
-                        <span className="date">{moment(post.updatedAt).isSame(new Date(), "day") ? 'עודכן היום' : ''}</span>
+                        <span className="date">{moment(post.creationDate).isSame(new Date(), "day") ? 'עודכן היום' : ''}</span>
                         <span className="clickForDetails">לחצו לפרטים</span>
                         <div className="contactPhone">
                             <span>{post.contactPhone}</span>

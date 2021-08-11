@@ -10,10 +10,10 @@ import LocationHeadline from "./LocationHeadline";
 import Sort from "./Sort";
 
 
-const Home = () => {
+const Home = (props) => {
   const location = ["ראשי", 'נדל"ן למכירה'];
   const [showSpinner, setShowSpinner] = useState(false);
-
+  const currentLocation = props.location.pathname;
   return (
     <>
       <Header />
@@ -24,7 +24,7 @@ const Home = () => {
         <Search />
         <LocationHeadline headline={location[location.length - 1]} />
         <Sort />
-        <Posts setShowSpinner={setShowSpinner} />
+        <Posts setShowSpinner={setShowSpinner} currentLocation={currentLocation} />
       </div>
     </>
   );

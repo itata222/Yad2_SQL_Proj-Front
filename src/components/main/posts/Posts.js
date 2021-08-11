@@ -9,7 +9,7 @@ import { FiltersContext } from '../../../contexts/filtersContext';
 import { PostsContext } from '../../../contexts/postsContext';
 import { setPostsAction } from '../../../actions/postsActions';
 
-const Posts = ({ setShowSpinner }) => {
+const Posts = ({ setShowSpinner, currentLocation }) => {
     const { filtersData } = useContext(FiltersContext);
     // console.log(filtersData)
     const { postsData, dispatchPostsData } = useContext(PostsContext)
@@ -37,7 +37,9 @@ const Posts = ({ setShowSpinner }) => {
     const fetchMoreData = () => {
         setTimeout(() => {
             const currentPosts = [...postsData];
+            console.log(limit, Math.ceil(currentPage), filtersData, postsData.length)
             getPosts(limit, currentPage, filtersData, postsData.length).then((res) => {
+                console.log(res)
                 if (res.posts.length > 0) {
                     setCurrentPage(res.posts.length / 5 + 1)
                     dispatchPostsData(setPostsAction([...currentPosts, ...res.posts]))
@@ -49,6 +51,7 @@ const Posts = ({ setShowSpinner }) => {
     }
 
     useEffect(() => {
+        console.log(1)
         setShowSpinner(true)
         getPosts(limit, 1, filtersData, postsData.length).then((res) => {
             setCurrentPage(res.posts.length / 5 + 1);
@@ -61,9 +64,10 @@ const Posts = ({ setShowSpinner }) => {
 
 
     const handleScroll = () => {
-        const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight
-        if (bottom && hasMore) {
-            fetchMoreData()
+        const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
+        console.log(bottom)
+        if (bottom && hasMore && currentLocation === "/home") {
+            fetchMoreData();
         }
     };
     useEffect(() => {
@@ -77,11 +81,11 @@ const Posts = ({ setShowSpinner }) => {
 
     return (
         <>
-            <NumberOfResults resultsLength={postsData.length || 0} />
+            <NumberOfResults resultsLength={postsData.length || 0} autoFocus />
             <div className="posts">
                 <InfiniteScroll
                     dataLength={limit}
-                    next={fetchMoreData}
+                    next={() => console.log('asd')}
                     hasMore={hasMore}
                     loader={<SpinnerInfiniteScroll />}
                     endMessage={<div className="endMessage">No More Posts</div>}

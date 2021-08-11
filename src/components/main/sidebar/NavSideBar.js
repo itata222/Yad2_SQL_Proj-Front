@@ -212,7 +212,7 @@ const NavSidebar = ({ setShowSideBar }) => {
                     </div>
                 </div>
             </div>
-            <div className="navBarBackground"></div>
+            <div className="navBarBackground" onClick={() => setShowSideBar(false)}></div>
         </div>
     )
 };

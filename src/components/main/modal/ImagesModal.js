@@ -33,7 +33,7 @@ const ImagesModal = ({ post, setShowImagesModal }) => {
                             autoPlay={false}>
                             {
                                 post.photos.map((image) => (
-                                    <img src={image} alt="" key={image} />
+                                    <img src={image.photo} alt="" key={image.photo} />
                                 ))
                             }
                         </Carousel> :

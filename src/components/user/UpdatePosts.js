@@ -23,7 +23,7 @@ const UpdatePosts = ({ userPosts }) => {
                             <span>מ"ר</span>
                         </div>
                         <div className="priceUserPost">
-                            {postObj.price === -1 ?
+                            {postObj.price === -1 || postObj.price === 0 ?
                                 <div>לא ציינת מחיר</div>
                                 :
                                 <NumberFormat value={postObj.price} displayType={'text'} thousandSeparator={true} prefix={'₪'} />

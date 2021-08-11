@@ -385,7 +385,20 @@
     }
 }
 @media (max-width:1000px){
+    .post-phoneExpanded{
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 2.5%;
+        z-index: 100;
+        width: 95% !important;
+        padding-bottom: 10vh;
+        margin-top: 0 !important;
 
+        .postExpand{
+            padding-bottom: 8rem;
+        }
+    }
     .postExpand{
         border-top: 1px solid #ccc;
         position: relative;

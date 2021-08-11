@@ -104,7 +104,10 @@ const AdvancedSearchForm = ({ searchButtonClicked }) => {
                     </div>
                     <div className="imidiateEntry">
                         <CheckBox value={filtersData.immidiate}
-                            onClick={() => dispatchFiltersData(setImmidiateAction(!filtersData.immidiate))} />
+                            onClick={() => {
+                                dispatchFiltersData(setEntryDate(moment().format('yyyy-MM-DD')))
+                                dispatchFiltersData(setImmidiateAction(!filtersData.immidiate))
+                            }} />
                         <label htmlFor="imidiateEntry">כניסה מיידית</label>
                     </div>
                 </div>
