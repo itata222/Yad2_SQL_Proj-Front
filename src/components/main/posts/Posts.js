@@ -37,7 +37,6 @@ const Posts = ({ setShowSpinner, currentLocation }) => {
     const fetchMoreData = () => {
         setTimeout(() => {
             const currentPosts = [...postsData];
-            console.log(limit, Math.ceil(currentPage), filtersData, postsData.length)
             getPosts(limit, currentPage, filtersData, postsData.length).then((res) => {
                 console.log(res)
                 if (res.posts.length > 0) {
@@ -51,7 +50,6 @@ const Posts = ({ setShowSpinner, currentLocation }) => {
     }
 
     useEffect(() => {
-        console.log(1)
         setShowSpinner(true)
         getPosts(limit, 1, filtersData, postsData.length).then((res) => {
             setCurrentPage(res.posts.length / 5 + 1);
@@ -65,7 +63,6 @@ const Posts = ({ setShowSpinner, currentLocation }) => {
 
     const handleScroll = () => {
         const bottom = Math.ceil(window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight;
-        console.log(bottom)
         if (bottom && hasMore && currentLocation === "/home") {
             fetchMoreData();
         }
@@ -85,7 +82,7 @@ const Posts = ({ setShowSpinner, currentLocation }) => {
             <div className="posts">
                 <InfiniteScroll
                     dataLength={limit}
-                    next={() => console.log('asd')}
+                    next={() => console.log('next')}
                     hasMore={hasMore}
                     loader={<SpinnerInfiniteScroll />}
                     endMessage={<div className="endMessage">No More Posts</div>}
